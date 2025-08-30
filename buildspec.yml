@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo "Nothing to install for static site"
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - aws s3 sync . s3://mukul-static-site-001 --delete
+artifacts:
+  files:
+    - '**/*'
